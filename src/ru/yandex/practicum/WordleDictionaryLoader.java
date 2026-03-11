@@ -28,7 +28,8 @@ public class WordleDictionaryLoader {
             while (br.ready()) {
                 try {
                     stringList.add(converter.getNormalizedWord(br.readLine()));
-                } catch (WordNotMatch ignored) {}
+                } catch (WordNotMatch ignored) {
+                }
             }
         }
 
