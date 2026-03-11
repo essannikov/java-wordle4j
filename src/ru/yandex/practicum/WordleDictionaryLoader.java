@@ -25,11 +25,10 @@ public class WordleDictionaryLoader {
         List<String> stringList = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename, StandardCharsets.UTF_8))) {
-            while (br.ready()){
-                try{
+            while (br.ready()) {
+                try {
                     stringList.add(converter.getNormalizedWord(br.readLine()));
-                } catch (WordNotMatch ignored) {
-                }
+                } catch (WordNotMatch ignored) {}
             }
         }
 

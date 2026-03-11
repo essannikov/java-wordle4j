@@ -99,7 +99,7 @@ public class WordleGame {
             if (line.isBlank()) {
                 break;
             } else {
-                try{
+                try {
                     int index = dictionary.indexOf(converter.getNormalizedWord(line));
                     wordUser = dictionary.get(index);
                 } catch (WordNotMatch | WordNotFoundInDictionary wordNotMatch) {
