@@ -3,7 +3,6 @@ package ru.yandex.practicum;
 import ru.yandex.practicum.exceptions.WordleException;
 
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.Scanner;
 
 /*
