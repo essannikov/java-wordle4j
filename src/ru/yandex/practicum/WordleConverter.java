@@ -1,7 +1,6 @@
 package ru.yandex.practicum;
 
 import ru.yandex.practicum.exceptions.WordNotMatch;
-import ru.yandex.practicum.exceptions.WordleException;
 
 public class WordleConverter {
     public static final int WORD_LENGTH = 5;
@@ -14,7 +13,7 @@ public class WordleConverter {
         }
     }
 
-    protected boolean check (String word) {
+    protected boolean check(String word) {
         if (word.length() != WORD_LENGTH) {
             return false;
         }
@@ -32,7 +31,7 @@ public class WordleConverter {
         return String.valueOf(ch).matches("[а-яА-ЯёЁ]");
     }
 
-    protected String convert (String word) {
+    protected String convert(String word) {
         return word.toLowerCase().replace('ё','е');
     }
 }
