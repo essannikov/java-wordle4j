@@ -14,6 +14,10 @@ public class WordleConverter {
     }
 
     protected boolean check(String word) {
+        if (word == null) {
+            return false;
+        }
+
         if (word.length() != WORD_LENGTH) {
             return false;
         }

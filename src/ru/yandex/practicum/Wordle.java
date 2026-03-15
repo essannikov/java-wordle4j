@@ -19,9 +19,7 @@ public class Wordle {
     public static final String FILE_LOG = "log.txt";
 
     public static void main(String[] args) {
-        try {
-            WordleLog log = new WordleLog(FILE_LOG);
-
+        try (WordleLog log = new WordleLog(FILE_LOG)) {
             try {
                 WordleConverter converter = new WordleConverter();
                 WordleDictionary dictionary = new WordleDictionaryLoader(converter).getDictionary(FILE_NAME);
@@ -30,13 +28,12 @@ public class Wordle {
                 while (running) {
                     showMenu();
 
-                    int choice = Integer.parseInt(new Scanner(System.in).nextLine());
-
+                    String choice = new Scanner(System.in).nextLine();
                     switch (choice) {
-                        case 1:
+                        case "1":
                             new WordleGame(dictionary, converter).start().status();
                             break;
-                        case 0:
+                        case "0":
                             running = false;
                             break;
                         default:
